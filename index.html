@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Name of Company</h1>
+        <h3>Additional info</h3>
+    </div>
+    <div class="navbar">
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <a href="#">Link4</a>
+    </div>
+    <div class="container">
+        <div class="slides">
+            <img src="blue.jpg" style="width: 100%">
+        </div>
+        <div class="slides">
+            <img src="img2.jpg" style="width: 100%">
+        </div>
+        <div class="slides">
+            <img src="img3.jpg" style="width: 100%">
+        </div>
+        <div class="slides">
+            <img src="img4.jpg" style="width: 100%">
+        </div>
+        <button class="btnleft" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="btnright" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+    <div class="grid">
+        <div class="item">
+            <a href="#">
+                <h1>Title</h1>
+                <h3>Information about the Company</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <h1>Title</h1>
+                <h3>Information about the Company</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <h1>Title</h1>
+                <h3>Information about the Company</h3>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <h1>Title</h1>
+                <h3>Information about the Company</h3>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#"><img src="insta.png" width="75px" height="75px"></a>
+        <a href="#"><img src="twitter.png" width="75px" height="75px"></a>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("slides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
